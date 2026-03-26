@@ -60,6 +60,13 @@ class MenuLateral extends StatelessWidget {
                   Approutes.prestamos,
                   currentRoute == Approutes.prestamos,
                 ),
+                _crearOpcionMenu(
+                  context,
+                  Icons.bar_chart,
+                  "Reportes",
+                  Approutes.reportes,
+                  currentRoute == Approutes.reportes,
+                ),
               ],
             ),
           ),

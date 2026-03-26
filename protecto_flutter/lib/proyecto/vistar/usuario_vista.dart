@@ -72,6 +72,8 @@ class _UsuarioVistaState extends State<UsuarioVista> {
                         builder: (_) => Dialog(
                           child: FormularioGenerico(
                             campos: columnas,
+                            titulo: "Crear Usuario",
+                            icono: Icons.person_add,
                           ),
                         ),
                       );
@@ -137,6 +139,8 @@ class _UsuarioVistaState extends State<UsuarioVista> {
                                 child: FormularioGenerico(
                                   campos: columnas,
                                   inicial: datos[seleccion!],
+                                  titulo: "Editar Usuario",
+                                  icono: Icons.edit,
                                 ),
                               ),
                             );

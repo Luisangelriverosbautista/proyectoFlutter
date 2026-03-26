@@ -75,6 +75,8 @@ class _LibroVistaState extends State<LibroVista> {
                         builder: (_) => Dialog(
                           child: FormularioGenerico(
                             campos: columnas,
+                            titulo: "Crear Libro",
+                            icono: Icons.library_add,
                           ),
                         ),
                       );
@@ -140,6 +142,8 @@ class _LibroVistaState extends State<LibroVista> {
                                 child: FormularioGenerico(
                                   campos: columnas,
                                   inicial: datos[seleccion!],
+                                  titulo: "Editar Libro",
+                                  icono: Icons.edit,
                                 ),
                               ),
                             );

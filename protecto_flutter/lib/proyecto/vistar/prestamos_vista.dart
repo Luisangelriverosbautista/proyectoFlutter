@@ -73,6 +73,8 @@ class _PrestamosVistaState extends State<PrestamosVista> {
                         builder: (_) => Dialog(
                           child: FormularioGenerico(
                             campos: columnas,
+                            titulo: "Registrar Préstamo",
+                            icono: Icons.assignment_add,
                           ),
                         ),
                       );
@@ -138,6 +140,8 @@ class _PrestamosVistaState extends State<PrestamosVista> {
                                 child: FormularioGenerico(
                                   campos: columnas,
                                   inicial: datos[seleccion!],
+                                  titulo: "Editar Préstamo",
+                                  icono: Icons.edit,
                                 ),
                               ),
                             );
