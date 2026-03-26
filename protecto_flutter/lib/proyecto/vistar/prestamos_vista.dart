@@ -48,14 +48,17 @@ class _PrestamosVistaState extends State<PrestamosVista> {
 
   @override
   Widget build(BuildContext context) {
+    final actionButtonStyle = ElevatedButton.styleFrom(
+      fixedSize: const Size(120, 44),
+    );
+
     return Scaffold(
       body: Row(
         children: [
 
-          const Expanded(flex: 1, child: MenuLateral()),
+          const MenuLateral(),
 
           Expanded(
-            flex: 4,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -92,6 +95,7 @@ class _PrestamosVistaState extends State<PrestamosVista> {
                         columnas: columnas,
                         datos: filtrados,
                         seleccion: seleccion,
+                        emptyMessage: "No hay prestamos registrados",
                         onSeleccion: (i) {
                           setState(() => seleccion = i);
                         },
@@ -107,6 +111,7 @@ class _PrestamosVistaState extends State<PrestamosVista> {
 
                       // ELIMINAR
                       ElevatedButton(
+                        style: actionButtonStyle,
                         onPressed: () {
                           if (seleccion != null) {
                             setState(() {
@@ -123,6 +128,7 @@ class _PrestamosVistaState extends State<PrestamosVista> {
 
                       // EDITAR
                       ElevatedButton(
+                        style: actionButtonStyle,
                         onPressed: () async {
                           if (seleccion != null) {
 

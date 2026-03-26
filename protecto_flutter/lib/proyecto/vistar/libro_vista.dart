@@ -50,14 +50,17 @@ class _LibroVistaState extends State<LibroVista> {
 
   @override
   Widget build(BuildContext context) {
+    final actionButtonStyle = ElevatedButton.styleFrom(
+      fixedSize: const Size(120, 44),
+    );
+
     return Scaffold(
       body: Row(
         children: [
 
-          const Expanded(flex: 1, child: MenuLateral()),
+          const MenuLateral(),
 
           Expanded(
-            flex: 4,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -94,6 +97,7 @@ class _LibroVistaState extends State<LibroVista> {
                         columnas: columnas,
                         datos: filtrados,
                         seleccion: seleccion,
+                        emptyMessage: "No hay libros registrados",
                         onSeleccion: (i) {
                           setState(() => seleccion = i);
                         },
@@ -109,6 +113,7 @@ class _LibroVistaState extends State<LibroVista> {
 
                       // ELIMINAR
                       ElevatedButton(
+                        style: actionButtonStyle,
                         onPressed: () {
                           if (seleccion != null) {
                             setState(() {
@@ -125,6 +130,7 @@ class _LibroVistaState extends State<LibroVista> {
 
                       // EDITAR
                       ElevatedButton(
+                        style: actionButtonStyle,
                         onPressed: () async {
                           if (seleccion != null) {
 

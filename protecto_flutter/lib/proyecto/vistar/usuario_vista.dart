@@ -47,14 +47,17 @@ class _UsuarioVistaState extends State<UsuarioVista> {
 
   @override
   Widget build(BuildContext context) {
+    final actionButtonStyle = ElevatedButton.styleFrom(
+      fixedSize: const Size(120, 44),
+    );
+
     return Scaffold(
       body: Row(
         children: [
 
-          const Expanded(flex: 1, child: MenuLateral()),
+          const MenuLateral(),
 
           Expanded(
-            flex: 4,
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: Column(
@@ -91,6 +94,7 @@ class _UsuarioVistaState extends State<UsuarioVista> {
                         columnas: columnas,
                         datos: filtrados,
                         seleccion: seleccion,
+                        emptyMessage: "No hay usuarios registrados",
                         onSeleccion: (i) {
                           setState(() => seleccion = i);
                         },
@@ -106,6 +110,7 @@ class _UsuarioVistaState extends State<UsuarioVista> {
 
                       // ELIMINAR
                       ElevatedButton(
+                        style: actionButtonStyle,
                         onPressed: () {
                           if (seleccion != null) {
                             setState(() {
@@ -122,6 +127,7 @@ class _UsuarioVistaState extends State<UsuarioVista> {
 
                       // EDITAR
                       ElevatedButton(
+                        style: actionButtonStyle,
                         onPressed: () async {
                           if (seleccion != null) {
 
